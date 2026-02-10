@@ -14,28 +14,28 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 // Protected routes
-Route::middleware('auth:sanctum')->group(function () {
-    // Authentication
-    Route::post('/logout', [AuthController::class, 'logout']);
-    Route::get('/user', function (Request $request) {
-        return $request->user();
-    });
+// Route::middleware('auth:sanctum')->group(function () {
+//     // Authentication
+//     Route::post('/logout', [AuthController::class, 'logout']);
+//     Route::get('/user', function (Request $request) {
+//         return $request->user();
+//     });
 
-    // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+//     // Dashboard
+//     Route::get('/dashboard', [DashboardController::class, 'index']);
 
-    // User Profile
-    Route::get('/profile', [UserController::class, 'profile']);
-    Route::put('/profile', [UserController::class, 'updateProfile']);
-    Route::put('/password', [UserController::class, 'updatePassword']);
+//     // User Profile
+//     Route::get('/profile', [UserController::class, 'profile']);
+//     Route::put('/profile', [UserController::class, 'updateProfile']);
+//     Route::put('/password', [UserController::class, 'updatePassword']);
 
-    // Categories
-    Route::apiResource('categories', CategoryController::class);
+//     // Categories
+//     Route::apiResource('categories', CategoryController::class);
 
-    // Budgets
-    Route::apiResource('budgets', BudgetController::class);
+//     // Budgets
+//     Route::apiResource('budgets', BudgetController::class);
 
-    // Expenses
-    Route::get('/expenses/recurring', [ExpenseController::class, 'recurring']);
-    Route::apiResource('expenses', ExpenseController::class);
-});
+//     // Expenses
+//     Route::get('/expenses/recurring', [ExpenseController::class, 'recurring']);
+//     Route::apiResource('expenses', ExpenseController::class);
+// });
